@@ -1,0 +1,28 @@
+import random
+
+MAX_ESSAIS = 5  # Nombre maximum d'essais autorisés
+NOMBRE_SECRET = random.randint(1, 10)  # Nombre secret à deviner
+
+# Fonction pour jouer au jeu
+def jouer():
+  nb_essais = 0  # Compteur d'essais
+  
+  # Boucle de jeu
+  while nb_essais < MAX_ESSAIS:
+    # Demander à l'utilisateur de saisir un nombre
+    nombre = input("Saisissez un nombre entre 1 et 10 : ")
+    
+    # Vérifier si le nombre est correct
+    if nombre == NOMBRE_SECRET:
+      print("Bravo, vous avez trouvé le nombre secret !")
+      return  # Quitter la boucle de jeu
+    else:
+      print("Désolé, ce n'est pas le bon nombre.")
+      nb_essais += 1  # Incrémenter le compteur d'essais
+  
+  # Si on sort de la boucle, c'est que l'utilisateur n'a pas trouvé le nombre secret
+  print("Désolé, vous n'avez pas trouvé le nombre secret.")
+
+# Programme principal
+if __name__ == "__main__":
+  jouer()
